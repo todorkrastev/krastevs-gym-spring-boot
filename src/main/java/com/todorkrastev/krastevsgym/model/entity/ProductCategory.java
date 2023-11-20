@@ -2,6 +2,7 @@ package com.todorkrastev.krastevsgym.model.entity;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -19,6 +20,7 @@ public class ProductCategory {
     private Set<Product> products;
 
     public ProductCategory() {
+        this.products = new HashSet<>();
     }
 
     public Long getId() {
@@ -43,18 +45,5 @@ public class ProductCategory {
 
     public void setProducts(Set<Product> products) {
         this.products = products;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ProductCategory that = (ProductCategory) o;
-        return Objects.equals(id, that.id) && Objects.equals(categoryName, that.categoryName) && Objects.equals(products, that.products);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, categoryName, products);
     }
 }

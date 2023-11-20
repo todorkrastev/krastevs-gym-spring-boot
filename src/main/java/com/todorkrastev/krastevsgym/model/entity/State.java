@@ -46,17 +46,4 @@ public class State {
     public void setCountry(Country country) {
         this.country = country;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        State state = (State) o;
-        return id == state.id && Objects.equals(name, state.name) && Objects.equals(country, state.country);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, country);
-    }
 }

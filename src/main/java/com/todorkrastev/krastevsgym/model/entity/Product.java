@@ -133,16 +133,11 @@ public class Product {
         this.lastUpdated = lastUpdated;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Product product = (Product) o;
-        return active == product.active && unitsInStock == product.unitsInStock && Objects.equals(id, product.id) && Objects.equals(stockKeepingUnit, product.stockKeepingUnit) && Objects.equals(name, product.name) && Objects.equals(description, product.description) && Objects.equals(unitPrice, product.unitPrice) && Objects.equals(imageUrl, product.imageUrl) && Objects.equals(dateCreated, product.dateCreated) && Objects.equals(lastUpdated, product.lastUpdated) && Objects.equals(category, product.category);
+    public ProductCategory getCategory() {
+        return category;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, stockKeepingUnit, name, description, unitPrice, imageUrl, active, unitsInStock, dateCreated, lastUpdated, category);
+    public void setCategory(ProductCategory category) {
+        this.category = category;
     }
 }

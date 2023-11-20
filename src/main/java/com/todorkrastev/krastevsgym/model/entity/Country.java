@@ -3,6 +3,7 @@ package com.todorkrastev.krastevsgym.model.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -25,6 +26,7 @@ public class Country {
     private List<State> states;
 
     public Country() {
+        this.states = new ArrayList<>();
     }
 
     public int getId() {
@@ -57,18 +59,5 @@ public class Country {
 
     public void setStates(List<State> states) {
         this.states = states;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Country country = (Country) o;
-        return id == country.id && Objects.equals(code, country.code) && Objects.equals(name, country.name) && Objects.equals(states, country.states);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, code, name, states);
     }
 }
