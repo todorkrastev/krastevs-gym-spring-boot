@@ -1,3 +1,1 @@
-# krastevs-gym-spring-boot
-
-My very first app developed with Spring Boot
+<h1 align="center">Krastev's Gym</h1>
